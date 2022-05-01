@@ -13,8 +13,8 @@ import ManageCar from './Components/Pages/ManageCar/ManageCar';
 import Blogs from './Components/Pages/Blogs/Blogs';
 
 
-
 function App() {
+
   return (
     <div className="App">
      <Header/>
@@ -44,7 +44,7 @@ function App() {
        <Route path='/register' element={<Register/>}></Route>
        <Route path='*' element={<NotFound/>}></Route>
      </Routes>
-     {/* <Footer/> */}
+     <Footer/>
     </div>
   );
 }
