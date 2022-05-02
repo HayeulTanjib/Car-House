@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+
 
 const InventoryDetails = () => {
     const { id } = useParams()
@@ -65,6 +66,7 @@ const InventoryDetails = () => {
                         <Button variant="primary" type="submit" className="mt-3">
                             Restock
                         </Button>
+                        <Link className='btn btn-primary' to={`/manage-inventory`}>Manage Inventory</Link>
                     </Form.Group>
                 </Form>
             </div>

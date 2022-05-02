@@ -38,12 +38,13 @@ const Inventory = () => {
                                         <Link className='btn btn-primary' to={`/inventory/${car._id}`}>Update</Link>
                                     </Card.Body>
                                 </Card>
-
                             </div>
-
                         );
                     })
                 }
+            </div>
+            <div className='py-3'>
+            <Link className='btn btn-primary px-5' to={`/manage-inventory`}>Manage Inventory</Link>
             </div>
         </div>
 

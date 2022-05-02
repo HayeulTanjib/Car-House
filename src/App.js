@@ -12,6 +12,8 @@ import MyCar from './Components/Pages/MyCar/MyCar';
 import ManageCar from './Components/Pages/ManageCar/ManageCar';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import InventoryDetails from './Components/Pages/InventoryDetails/InventoryDetails';
+import ManageInventory from './Components/Pages/ManageInventory/ManageInventory';
+import AddInventory from './Components/Pages/AddInventory/AddInventory';
 
 
 function App() {
@@ -43,6 +45,18 @@ function App() {
         <Route path='/inventory/:id' element={
           <RequireAuth>
             <InventoryDetails />
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/manage-inventory' element={
+          <RequireAuth>
+            <ManageInventory />
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/addinventory' element={
+          <RequireAuth>
+            <AddInventory />
           </RequireAuth>
         }></Route>
 
