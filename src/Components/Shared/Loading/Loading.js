@@ -3,7 +3,7 @@ import { Button, Spinner } from 'react-bootstrap';
 
 const Loading = () => {
     return (
-        <div>
+        <div className='vh-100'>
             <>
                 <Button variant="warning" className="fw-bold" disabled>
                     <Spinner

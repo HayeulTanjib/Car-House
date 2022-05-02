@@ -11,40 +11,47 @@ import AddCar from './Components/Pages/AddCar/AddCar';
 import MyCar from './Components/Pages/MyCar/MyCar';
 import ManageCar from './Components/Pages/ManageCar/ManageCar';
 import Blogs from './Components/Pages/Blogs/Blogs';
+import InventoryDetails from './Components/Pages/InventoryDetails/InventoryDetails';
 
 
 function App() {
 
   return (
     <div className="App">
-     <Header/>
-     <Routes>
-       <Route path='/' element={<Home/>}></Route>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
 
-       <Route path='/addcar' element={
-         <RequireAuth>
-           <AddCar/>
-         </RequireAuth>
-       }></Route>
+        <Route path='/addcar' element={
+          <RequireAuth>
+            <AddCar />
+          </RequireAuth>
+        }></Route>
 
-       <Route path='/managecar' element={
-         <RequireAuth>
-           <ManageCar/>
-         </RequireAuth>
-       }></Route>
+        <Route path='/managecar' element={
+          <RequireAuth>
+            <ManageCar />
+          </RequireAuth>
+        }></Route>
 
-       <Route path='/mycar' element={
-         <RequireAuth>
-           <MyCar/>
-         </RequireAuth>
-       }></Route>
+        <Route path='/mycar' element={
+          <RequireAuth>
+            <MyCar />
+          </RequireAuth>
+        }></Route>
 
-       <Route path='/blogs' element={<Blogs/>}></Route>
-       <Route path='/login' element={<Login/>}></Route>
-       <Route path='/register' element={<Register/>}></Route>
-       <Route path='*' element={<NotFound/>}></Route>
-     </Routes>
-     <Footer/>
+        <Route path='/inventory/:id' element={
+          <RequireAuth>
+            <InventoryDetails />
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/blogs' element={<Blogs />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/register' element={<Register />}></Route>
+        <Route path='*' element={<NotFound />}></Route>
+      </Routes>
+      <Footer />
     </div>
   );
 }
