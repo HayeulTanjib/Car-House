@@ -21,7 +21,7 @@ const Inventory = () => {
             <hr className='w-25 mx-auto mb-5' />
             <div className='row mx-auto'>
                 {
-                    cars.map(car => {
+                    cars.slice(0,6).map(car => {
                         const { name, img, price, description } = car;
 
                         return (
