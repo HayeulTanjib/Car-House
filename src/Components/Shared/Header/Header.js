@@ -24,8 +24,8 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Link to="/">Home</Link>
-                            <Link to="/addcar">Add Car</Link>
-                            <Link to="/managecar">Manage Car</Link>
+                            <Link to="/addinventory">Add Car</Link>
+                            <Link to="/manage-inventory">Manage Car</Link>
                             <Link to="/mycar">My Car</Link>
                             {user ?
                             <>

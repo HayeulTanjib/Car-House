@@ -7,9 +7,7 @@ import NotFound from './Components/Pages/NotFound/NotFound';
 import Register from './Components/Authentication/Register/Register';
 import Login from './Components/Authentication/Login/Login';
 import RequireAuth from './RequireAuth/RequireAuth';
-import AddCar from './Components/Pages/AddCar/AddCar';
 import MyCar from './Components/Pages/MyCar/MyCar';
-import ManageCar from './Components/Pages/ManageCar/ManageCar';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import InventoryDetails from './Components/Pages/InventoryDetails/InventoryDetails';
 import ManageInventory from './Components/Pages/ManageInventory/ManageInventory';
@@ -24,23 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
 
-        <Route path='/addcar' element={
-          <RequireAuth>
-            <AddCar />
-          </RequireAuth>
-        }></Route>
-
-        <Route path='/managecar' element={
-          <RequireAuth>
-            <ManageCar />
-          </RequireAuth>
-        }></Route>
-
-        <Route path='/mycar' element={
-          <RequireAuth>
-            <MyCar />
-          </RequireAuth>
-        }></Route>
+      
 
         <Route path='/inventory/:id' element={
           <RequireAuth>
@@ -57,6 +39,12 @@ function App() {
         <Route path='/addinventory' element={
           <RequireAuth>
             <AddInventory />
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/mycar' element={
+          <RequireAuth>
+            <MyCar />
           </RequireAuth>
         }></Route>
 

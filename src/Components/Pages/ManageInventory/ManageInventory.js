@@ -59,7 +59,7 @@ const ManageInventory = () => {
                                             <td>{}</td>
                                             <td>{name}</td>
                                             <td>
-                                                Price: {price} <br />
+                                                Price: {price}$ <br />
                                                 Quantity: {quantity} <br />
                                                 Supplier : {supplier_name} 
                                             </td>
