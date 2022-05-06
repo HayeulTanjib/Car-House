@@ -30,11 +30,9 @@ const Register = () => {
    if(user){
        console.log('Registration Successful');
    }
-   
-  
 
     return (
-        <div>
+        <div className='vh-100'>
             <h2 className='py-3'>Register</h2>
             <Form className="w-50 mx-auto" onSubmit={handleRegisterForm}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -44,7 +42,7 @@ const Register = () => {
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
                 {error && <p className='text-danger'>{error.message}</p>}
-                <Button variant="primary" type="submit">
+                <Button className="mb-3" variant="primary" type="submit">
                     Register
                 </Button>
             </Form>

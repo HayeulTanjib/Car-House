@@ -29,7 +29,8 @@ const Header = () => {
                             <Link to="/mycar">My Car</Link>
                             {user ?
                             <>
-                            <Button className='py-0' onClick={handleSignOut} variant='danger'>Logout</Button>
+                            <p className='btn btn-danger py-0 me-3' onClick={handleSignOut}>Logout</p>
+                            {/* <Button className='py-0 me-3' onClick={handleSignOut} variant='danger'>Logout</Button> */}
                             <p>{user?.email}</p>
                             </>
                             :

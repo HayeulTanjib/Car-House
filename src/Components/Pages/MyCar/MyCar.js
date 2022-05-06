@@ -6,7 +6,6 @@ import auth from '../../../FireBase/firebase-config';
 //import useCarDelete from '../../Hooks/useCarDelete';
 
 const MyCar = () => {
-
     
     const [user] = useAuthState(auth);
     //const [myCar, handleDelete] = useCarDelete();
@@ -15,7 +14,12 @@ const MyCar = () => {
     useEffect(() => {
           const addMyCar = async () => {
               const url = (`http://localhost:5000/addmycar?email=${user?.email}`)
-              const { data } = await axios.get(url)
+              const { data } = await axios.get(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+              })
+
               setMyCar(data)
           }
           addMyCar();
@@ -47,12 +51,12 @@ const MyCar = () => {
                         </tr>
                     </thead>
                     {
-                        myCar.map(car => {
+                        myCar.map((car, index) => {
                             return (
                                 <>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
+                                            <td>{index+1}</td>
                                             <td>{car.name}</td>
                                             <td>
                                             <Button variant="danger" onClick={() => handleDelete(car._id)}>Delete</Button>

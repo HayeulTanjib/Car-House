@@ -6,25 +6,32 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import axios from 'axios';
 
 
 const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending, passwordResetError] = useSendPasswordResetEmail(auth);
 
-    
-
     const navigate = useNavigate();
     const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const emailRef = useRef("");
     const passwordRef = useRef("");
 
-    const handleLoginForm = (e) => {
+    const handleLoginForm = async (e) => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password)
+
+        await signInWithEmailAndPassword(email, password)
+        const {data} = await axios.post('http://localhost:5000/login', {email});
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
+        console.log(data, {email})
+
+
         //clear input
         e.target.reset();
     }
@@ -40,12 +47,14 @@ const Login = () => {
         }
     }
 
-
-    const from = location.state?.from?.pathname || "/";
+    
     if (user) {
-        navigate(from, { replace: true });
+        
     }
 
+    if(error){
+        toast.error("Email/Password Not Matched")
+    }
 
     return (
         <div>
@@ -62,8 +71,9 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
-                <p>Forgot Password? <button onClick={handlePasswordReset} className='py-0 btn btn-danger'>Reset Password</button></p>
+                <div className="pt-3"><p>Forgot Password? <button onClick={handlePasswordReset} className='py-0 btn btn-danger'>Reset Password</button></p></div>
             </Form>
+           
             <SocialLogin />
             <ToastContainer />
         </div>

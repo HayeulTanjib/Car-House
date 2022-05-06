@@ -48,7 +48,7 @@ const ManageInventory = () => {
                     </thead>
                     {
                         
-                        allCars.map(car => {
+                        allCars.map((car, index) => {
                             const { name, price, quantity, supplier_name } = car;
                             
                             
@@ -56,7 +56,7 @@ const ManageInventory = () => {
                                 <>
                                     <tbody key={car._id}>
                                         <tr>
-                                            <td>{}</td>
+                                            <td>{index+1}</td>
                                             <td>{name}</td>
                                             <td>
                                                 Price: {price}$ <br />

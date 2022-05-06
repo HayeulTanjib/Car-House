@@ -20,30 +20,28 @@ const Footer = () => {
                 style={{width: '60px', backgroundColor: '#7c4dff', height: '2px'}}
                 />
             <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              Car House is Leading Warehouse in Bangladesh. We have over ten thousand car capacity. One the the biggest and beastest in the country. 
             </p>
           </div>
         
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             
-            <h6 className="text-uppercase fw-bold">Products</h6>
+            <h6 className="text-uppercase fw-bold">Car Vendors</h6>
             <hr
                 className="mb-4 mt-0 d-inline-block mx-auto"
                 style={{width: '60px', backgroundColor: '#7c4dff', height: '2px'}}
                 />
             <p>
-              <a href="#!" className="text-white">MDBootstrap</a>
+              <a href="#!" className="text-white">CDI Autos</a>
             </p>
             <p>
-              <a href="#!" className="text-white">MDWordPress</a>
+              <a href="#!" className="text-white">MKV Line</a>
             </p>
             <p>
-              <a href="#!" className="text-white">BrandFlow</a>
+              <a href="#!" className="text-white">Venex Auto</a>
             </p>
             <p>
-              <a href="#!" className="text-white">Bootstrap Angular</a>
+              <a href="#!" className="text-white">Velor</a>
             </p>
           </div>
           
@@ -54,10 +52,10 @@ const Footer = () => {
                 style={{width: '60px', backgroundColor: '#7c4dff', height: '2px'}}
                 />
             <p>
-              <a href="#!" className="text-white">Your Account</a>
+              <a href="#!" className="text-white">Car Tendar</a>
             </p>
             <p>
-              <a href="#!" className="text-white">Become an Affiliate</a>
+              <a href="#!" className="text-white">Maintenance</a>
             </p>
             <p>
               <a href="#!" className="text-white">Shipping Rates</a>
@@ -73,8 +71,8 @@ const Footer = () => {
                 className="mb-4 mt-0 d-inline-block mx-auto"
                 style={{width: '60px', backgroundColor: '#7c4dff', height: '2px'}}
                 />
-            <p><i className="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i className="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i className="fas fa-home mr-3"></i> Baridhara, BD 10012, BS</p>
+            <p><i className="fas fa-envelope mr-3"></i> info@carhouse.com</p>
             <p><i className="fas fa-phone mr-3"></i> + 01 234 567 88</p>
             <p><i className="fas fa-print mr-3"></i> + 01 234 567 89</p>
           </div>
