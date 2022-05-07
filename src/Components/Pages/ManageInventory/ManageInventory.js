@@ -5,30 +5,30 @@ import { Link } from 'react-router-dom';
 
 const ManageInventory = () => {
 
-    const [allCars, setAllCars] = useState([]);    
-    
+    const [allCars, setAllCars] = useState([]);
+
 
     useEffect(() => {
         const getAllCar = async () => {
-            const { data } = await axios.get('http://localhost:5000/inventory')
+            const { data } = await axios.get('https://gentle-bayou-59489.herokuapp.com/inventory')
             setAllCars(data)
-           
+
         }
         getAllCar();
     }, [])
 
     //Delete
-    const handleDelete = async(id) =>{
+    const handleDelete = async (id) => {
         let deleteConfirm = window.confirm('Are you sure?')
-        if(deleteConfirm){
-        await axios.delete(`http://localhost:5000/inventory/${id}`)
-        .then(response =>{
-            if(response.data.deletedCount > 0){
-                const remaining = allCars.filter(cars => cars._id !== id);
-                setAllCars(remaining)
-            }
-        })
-    }
+        if (deleteConfirm) {
+            await axios.delete(`https://gentle-bayou-59489.herokuapp.com/inventory/${id}`)
+                .then(response => {
+                    if (response.data.deletedCount > 0) {
+                        const remaining = allCars.filter(cars => cars._id !== id);
+                        setAllCars(remaining)
+                    }
+                })
+        }
     }
 
 
@@ -47,21 +47,21 @@ const ManageInventory = () => {
                         </tr>
                     </thead>
                     {
-                        
+
                         allCars.map((car, index) => {
                             const { name, price, quantity, supplier_name } = car;
-                            
-                            
+
+
                             return (
                                 <>
                                     <tbody key={car._id}>
                                         <tr>
-                                            <td>{index+1}</td>
+                                            <td>{index + 1}</td>
                                             <td>{name}</td>
                                             <td>
                                                 Price: {price}$ <br />
                                                 Quantity: {quantity} <br />
-                                                Supplier : {supplier_name} 
+                                                Supplier : {supplier_name}
                                             </td>
                                             <td>
                                                 <Button variant="danger" onClick={() => handleDelete(car._id)}>Delete</Button>

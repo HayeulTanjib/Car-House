@@ -11,7 +11,7 @@ const AddInventory = () => {
     const [user] = useAuthState(auth);
 
     const onSubmit = async (data, e) => {
-        await axios.post('http://localhost:5000/addmycar', data)
+        await axios.post('https://gentle-bayou-59489.herokuapp.com/addmycar', data)
         toast.success('Car Added Successfully')
         e.target.reset()
     }
@@ -22,15 +22,15 @@ const AddInventory = () => {
             <div className='' >
                 <form className='mx-auto d-flex flex-column w-50 gap-3' onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("email")} value={user.email} />
-                    <input {...register("name")} placeholder="Car Name" required/>
-                    <input {...register("img")} placeholder="Image Link" required/>
-                    <input {...register("description")} placeholder="Description" required/>
+                    <input {...register("name")} placeholder="Car Name" required />
+                    <input {...register("img")} placeholder="Image Link" required />
+                    <input {...register("description")} placeholder="Description" required />
                     <input {...register("price")} placeholder="Price" />
-                    <input {...register("quantity")} placeholder="Quantity" required/>
-                    <input {...register("supplier_name")} placeholder="Supplier Name" required/>
+                    <input {...register("quantity")} placeholder="Quantity" required />
+                    <input {...register("supplier_name")} placeholder="Supplier Name" required />
                     <input type="submit" className='btn btn-primary' value={'Add Car'} />
                 </form>
-                <ToastContainer/>
+                <ToastContainer />
             </div>
         </div>
     );

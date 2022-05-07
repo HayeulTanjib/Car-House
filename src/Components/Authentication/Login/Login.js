@@ -26,9 +26,9 @@ const Login = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email, password)
-        const {data} = await axios.post('http://localhost:5000/login', {email});
+        const { data } = await axios.post('https://gentle-bayou-59489.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
-        
+
         //clear input
         e.target.reset();
     }
@@ -39,16 +39,16 @@ const Login = () => {
             await sendPasswordResetEmail(email);
             toast.success("Password Reset Email Sent");
         }
-        else{
+        else {
             toast.error("Enter Your Email 1st");
         }
     }
 
-    if(user){
+    if (user) {
         navigate(from, { replace: true });
     }
-    
-    if(error){
+
+    if (error) {
         toast.error("Email/Password Not Matched")
     }
 
@@ -63,13 +63,13 @@ const Login = () => {
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" className='shadow-none' required />
                 </Form.Group>
                 {error && <p className='text-danger'>{error.message}</p>}
-                
+
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
                 <div className="pt-3"><p>Forgot Password? <button onClick={handlePasswordReset} className='py-0 btn btn-danger'>Reset Password</button></p></div>
             </Form>
-           
+
             <SocialLogin />
             <ToastContainer />
         </div>
