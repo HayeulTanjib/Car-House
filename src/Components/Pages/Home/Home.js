@@ -1,6 +1,7 @@
 import React from 'react';
 import Inventory from '../Inventory/Inventory';
 import BrandSlider from './BrandSlider/BrandSlider';
+import ContactMap from './ContactMap/ContactMap';
 import Slider from './Slider/Slider';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
             <Slider/>
             <Inventory/>
             <BrandSlider/>
+            <ContactMap/>
         </div>
     );
 };

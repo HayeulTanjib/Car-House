@@ -17,29 +17,29 @@ const BrandSlider = () => {
       };
 
     return (
-        <div>
-            <h2>Brands</h2>
+        <div className='mb-5'>
+            <h2 className='pt-5'>Brands We Trust</h2>
+            <hr className='w-25 mx-auto mb-5' />
             <div>
+              <div>
         <Slider {...settings}>
-          <div>
-            <img src="" alt="" />
+          <div className=''>
+            <img src="https://i.ibb.co/2ywTQGW/toyota-logo-removebg-preview.png" className='img-fluid' alt="" />
           </div>
           <div>
-            <h3>2</h3>
+          <img src="https://i.ibb.co/VLYFb5M/Nissan-Logo-2.jpg" className='img-fluid w-50' alt="" />
           </div>
           <div>
-            <h3>3</h3>
+          <img src="https://i.ibb.co/zPWbZpM/Mazda-Logo.png" className='img-fluid w-75' alt="" />
           </div>
           <div>
-            <h3>4</h3>
+          <img src="https://i.ibb.co/CH0k604/Honda-svg.png" className='img-fluid w-50' alt="" />
           </div>
           <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
+          <img src="https://i.ibb.co/Jc441rM/Subaru-Logo.png" className='img-fluid w-75' alt="" />
           </div>
         </Slider>
+        </div>
       </div>
         </div>
     );
