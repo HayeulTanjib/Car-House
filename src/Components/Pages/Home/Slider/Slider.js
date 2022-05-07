@@ -21,8 +21,8 @@ const Slider = () => {
                         
                     />
                     <Carousel.Caption>
-                        <h2>Elegance</h2>
-                        <h4>“ The cars we drive say a lot about us.”</h4>
+                        <h4>Elegance</h4>
+                        <h6>“ The cars we drive say a lot about us.”</h6>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -33,8 +33,8 @@ const Slider = () => {
                     />
 
                     <Carousel.Caption>
-                        <h2>Wild And Free</h2>
-                        <h4>“We aren't addicted to oil, but our cars are”</h4>
+                        <h4>Wild And Free</h4>
+                        <h6>“We aren't addicted to oil, but our cars are”</h6>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -45,10 +45,10 @@ const Slider = () => {
                     />
 
                     <Carousel.Caption>
-                        <h2>Attitude</h2>
-                        <h4>
+                        <h4>Attitude</h4>
+                        <h6>
                             "A car for every purse and purpose."
-                        </h4>
+                        </h6>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
