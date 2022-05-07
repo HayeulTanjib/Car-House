@@ -3,6 +3,8 @@ import { Button, Form } from 'react-bootstrap';
 import auth from '../../../FireBase/firebase-config';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
+import { Link } from 'react-router-dom';
 
 
 
@@ -27,8 +29,8 @@ const Register = () => {
        e.target.reset();
    }
 
-   if(user){
-       console.log('Registration Successful');
+   if(loading){
+      <Loading/>
    }
 
     return (
@@ -39,12 +41,15 @@ const Register = () => {
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" className='shadow-none' required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" className='shadow-none' required />
+                    <Form.Control ref={passwordRef} type="password" placeholder="Password" minLength="6" className='shadow-none' required />
                 </Form.Group>
                 {error && <p className='text-danger'>{error.message}</p>}
                 <Button className="mb-3" variant="primary" type="submit">
                     Register
                 </Button>
+                <div>
+                <p className='text-center'>Already Member? <Button className='btn btn-warning my-2 py-0'><Link className='text-decoration-none text-dark' to="/login">Login Here</Link> </Button></p>
+            </div>
             </Form>
             <SocialLogin/>
         </div>

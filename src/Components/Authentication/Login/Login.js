@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 import axios from 'axios';
+import Loading from '../../Shared/Loading/Loading';
 
 
 const Login = () => {
@@ -50,6 +51,10 @@ const Login = () => {
 
     if (error) {
         toast.error("Email/Password Not Matched")
+    }
+
+    if(loading){
+        <Loading/>
     }
 
     return (

@@ -2,20 +2,27 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Loading from '../../Shared/Loading/Loading';
 
 const Inventory = () => {
     const [cars, setCars] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true)
         const getCars = async () => {
             const { data } = await axios.get('https://gentle-bayou-59489.herokuapp.com/inventory')
             setCars(data)
+            setLoading(false)
         }
         getCars();
     }, [])
 
 
     return (
+        <>
+            {loading ?  <div className='mt-5'><Loading /></div> : (
+                  
         <div>
             <h1 className='text-center mt-5'> Inventory</h1>
             <hr className='w-25 mx-auto mb-5' />
@@ -51,6 +58,8 @@ const Inventory = () => {
                 <Link className='btn btn-warning fw-bold px-5' to={`/manage-inventory`}>Manage Inventory</Link>
             </div>
         </div>
+         )}
+         </>
 
     )
 };

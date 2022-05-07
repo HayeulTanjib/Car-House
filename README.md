@@ -1,8 +1,8 @@
 # Car House
 
-This project made with React JS and Node JS [LIVE LINK]()
+This project made with React JS and Node JS [LIVE LINK - Click Here](https://car-house-f74ee.web.app/)
 
-## [LIVE LINK]()
+## [LIVE LINK - Click Here](https://car-house-f74ee.web.app/)
 
 ## Project Description
 
@@ -15,7 +15,7 @@ This project made with React JS and Node JS [LIVE LINK]()
 * Users can see all car list, add new car to the inventory and delete.
 * Information is secured by JWT token.
 * User can Logout.
-* Full Responsive UI
+* Full Responsive UI.
 
 
 ## Technology Used
@@ -28,6 +28,7 @@ This project made with React JS and Node JS [LIVE LINK]()
 * React Slick
 * React Toastify
 * React Leaflet
+* React Hook Form
 * React Firebase Hooks
 * Firebase Authentication - Email & Password
 * Firebase Authentication - Google

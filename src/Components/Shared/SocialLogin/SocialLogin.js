@@ -24,7 +24,17 @@ const SocialLogin = () => {
     }
     return (
         <div>
-            <Button variant='primary' onClick={handleGoogleSignin}>Signin With Google</Button>
+            <div className='d-flex container justify-content-center align-items-center py-3'>
+                <hr className='w-25' />
+                <p className='mx-2'>or</p>
+                <hr className='w-25' />
+            </div>
+            <>
+            {error ? <p className='text-danger'>{error.message}</p> : "" }
+            </>
+            <div>
+            <button className='btn btn-outline-dark px-5' onClick={handleGoogleSignin}> <i class="fa-brands fa-google me-2"></i> Signin With Google</button>
+            </div>
         </div>
     );
 };
