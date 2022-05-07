@@ -28,10 +28,7 @@ const Login = () => {
         await signInWithEmailAndPassword(email, password)
         const {data} = await axios.post('http://localhost:5000/login', {email});
         localStorage.setItem('accessToken', data.accessToken);
-        navigate(from, { replace: true });
-        console.log(data, {email})
-
-
+        
         //clear input
         e.target.reset();
     }
@@ -47,24 +44,23 @@ const Login = () => {
         }
     }
 
-    
-    if (user) {
-        
+    if(user){
+        navigate(from, { replace: true });
     }
-
+    
     if(error){
         toast.error("Email/Password Not Matched")
     }
 
     return (
-        <div>
+        <div className='vh-100 mt-5'>
             <h2 className='py-3'>Login</h2>
             <Form className="w-50 mx-auto" onSubmit={handleLoginForm}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" className='shadow-none' required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                    <Form.Control ref={passwordRef} type="password" placeholder="Password" className='shadow-none' required />
                 </Form.Group>
                 {error && <p className='text-danger'>{error.message}</p>}
                 

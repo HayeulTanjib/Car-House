@@ -28,7 +28,7 @@ const Inventory = () => {
                         return (
                             <div key={car._id} className="col-12 col-md-4 pb-5 d-flex justify-content-center align-items-center">
 
-                                <Card style={{ width: '22rem' }} className="shadow-sm">
+                                <Card style={{ width: '22rem' }} className="shadow-lg">
                                     <Card.Img variant="top" className='img-thumbnail' src={img} />
                                     <Card.Body>
                                         <Card.Title><h3>{name}</h3></Card.Title>
@@ -38,7 +38,7 @@ const Inventory = () => {
                                         <Card.Text>
                                             {description.slice(0,100)+ "..."}
                                         </Card.Text>
-                                        <Link className='btn btn-primary' to={`/inventory/${car._id}`}>Update</Link>
+                                        <Link className='btn btn-secondary fw-bold' to={`/inventory/${car._id}`}>Update</Link>
                                     </Card.Body>
                                 </Card>
                             </div>
@@ -48,7 +48,7 @@ const Inventory = () => {
             </div>
             </div>
             <div className='py-3'>
-            <Link className='btn btn-primary px-5' to={`/manage-inventory`}>Manage Inventory</Link>
+            <Link className='btn btn-warning fw-bold px-5' to={`/manage-inventory`}>Manage Inventory</Link>
             </div>
         </div>
 

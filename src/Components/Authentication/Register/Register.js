@@ -32,14 +32,14 @@ const Register = () => {
    }
 
     return (
-        <div className='vh-100'>
+        <div className='vh-100 mt-5'>
             <h2 className='py-3'>Register</h2>
             <Form className="w-50 mx-auto" onSubmit={handleRegisterForm}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" className='shadow-none' required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                    <Form.Control ref={passwordRef} type="password" placeholder="Password" className='shadow-none' required />
                 </Form.Group>
                 {error && <p className='text-danger'>{error.message}</p>}
                 <Button className="mb-3" variant="primary" type="submit">
